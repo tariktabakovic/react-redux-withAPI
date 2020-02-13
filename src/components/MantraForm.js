@@ -3,7 +3,7 @@ export default class MantraForm extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            input: ''
+            text: ''
         };
     }
     render(){
@@ -12,7 +12,7 @@ export default class MantraForm extends React.Component{
                 <form>
                     <input 
                     onChange = {this._handleChange}
-                    value ={this.state.input}></input>
+                    value ={this.state.text}></input>
                 </form>
             </div>
         )
