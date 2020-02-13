@@ -10,7 +10,7 @@ export function mantra(state=defaultState, action){
     let newState = [...state];
     switch(action.type){
         case ADD_MANTRA:
-            newState.push()
+            newState.push(action.payload.mantra)
             break;
         default:
             break;

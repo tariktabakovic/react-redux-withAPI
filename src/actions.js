@@ -1,8 +1,10 @@
 export const ADD_MANTRA = 'ADD_MANTRA';
 
-export function actionAddMantra(){
+export function actionAddMantra(mantra){
     return({
         type: ADD_MANTRA,
-        id
+        payload:{
+            mantra
+        }
     })
 }
