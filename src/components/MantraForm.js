@@ -9,13 +9,23 @@ export default class MantraForm extends React.Component{
     render(){
         return (
             <div>Hello
-                <form>
+                <form onSubmit= {this._handleSubmit}>
                     <input 
                     onChange = {this._handleChange}
-                    value ={this.state.text}></input>
+                    value ={this.state.text}
+                    />
+                    <input type= 'submit' value='go!'/>
                 </form>
             </div>
         )
+    }
+
+    _handleSubmit = (event)=>{
+        event.preventDefault();
+        this.props.handleSubmit(this.state.text);
+        this.setState({
+            text: ''
+        })
     }
 
     _handleChange = (event) =>{

@@ -1,12 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import MatraForm from './components/MantraForm'
-import MantraForm from './components/MantraForm';
+
+// we need createStore from redux
+import {createStore} from 'redux';
+// reducer
+import {mantras} from './Reducers';
+// we need our smart componenets
+import MantraForm from './containers/MantraFormContainer';
+import MantraList from './containers/MantraListContainer';
+// we need the provider from react-redux
+import {Provider} from 'react-redux';
+
+
+const store = createStore(mantras);
 
 function App() {
   return (
-    <MantraForm/>
+      <div>
+        <Provider store={store}>
+          <MantraForm/>
+          <MantraList/>
+        </Provider>
+      </div>
   );
 }
 

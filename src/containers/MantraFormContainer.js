@@ -9,11 +9,16 @@ import {
 
 function mapDispatchToProps(dispatch){
     return {
-        handleChange: ()=>{
-            dispatch(actionAddMantra());
+        handleSubmit: (newMantra)=>{
+            dispatch(actionAddMantra(newMantra));
         }
     }
 }
 
-const reduxConnect= connect(mapDispatchToProps);
-export default reduxConnecter(MantraForm);
+// fancy version
+// const mapDispatchToProps = dispatch => ({
+//     handleChange: (newMantra)=> dispatch(actionAddMantra(newMantra))
+// })
+
+const reduxConnector= connect(null, mapDispatchToProps);
+export default reduxConnector(MantraForm);

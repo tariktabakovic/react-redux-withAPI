@@ -5,8 +5,8 @@ import {
 
 // our default state is nothing
 // we want to fetch a mantra
-const defaultState= [];
-export function mantra(state=defaultState, action){
+const defaultState= ['a', 'b', 'c'];
+export function mantras(state=defaultState, action){
     let newState = [...state];
     switch(action.type){
         case ADD_MANTRA:
